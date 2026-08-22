@@ -1,0 +1,19 @@
+.venv/
+.coverage
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+
+# Generated reports and local runtime outputs are not source files.
+reports/
+output/
+
+# Local secrets or machine-specific environment configuration.
+.env
+.env.*
+!.env.example

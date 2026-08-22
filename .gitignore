@@ -1,0 +1,44 @@
+# macOS and editor-local state
+.DS_Store
+.claude/
+.vscode/
+
+# Python environments, caches, and build products
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+**/.pytest_cache/
+.mypy_cache/
+**/.mypy_cache/
+.ruff_cache/
+**/.ruff_cache/
+*.py[cod]
+build/
+dist/
+*.egg-info/
+
+# Local secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+
+# Data, models, generated artifacts, and restricted/local references
+/train_release/
+/reference_knowledge/
+/output/
+/tmp/
+/models/
+**/artifacts/
+**/reports/
+*.tar
+*.tar.gz
+
+# Historical workspaces are not part of the new implementation. Required
+# handbooks are maintained directly under project2/docs.
+/baseline/
+/notebooks/
+/peer_handbook/
+/project/
+/project_knowledge/
