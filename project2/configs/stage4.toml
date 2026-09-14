@@ -1,0 +1,5 @@
+[arbitration]
+policy_version = "arbitration-policy-v1"
+llm_decision_promoted = false
+expected_artifact_manifest_digest = ""
+expected_predictor_ownership_policy_version = ""

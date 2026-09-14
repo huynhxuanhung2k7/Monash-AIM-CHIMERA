@@ -1,6 +1,6 @@
 # Project2 Blocks 3–5 Start Plan
 
-Status: **active implementation sequence**
+Status: **foundation completed and verified 2026-09-14**
 Workspace: **`project2/` only**
 Owner: **xuanhung_07**
 Upstream collaborator: **smoovie, Blocks 1–2**
@@ -62,6 +62,8 @@ passing bootstrap test, clean Ruff output, and clean strict mypy output.
 
 ### Gate 0.2 — terminal output contracts
 
+Status: **completed and verified 2026-09-14**.
+
 Create strict frozen models for:
 
 - Binary decision root value: `yes | no`.
@@ -79,6 +81,9 @@ Acceptance:
 - Any probability-like or internal diagnostic field fails output validation.
 
 ### Gate 0.3 — cross-team handoff contracts
+
+Status: **consumer contract and fake-service fixture completed; real-owner
+compatibility review pending**.
 
 Create V1 strict frozen models for:
 
@@ -98,6 +103,8 @@ Acceptance:
 - Both owners approve the fixture before parallel implementation diverges.
 
 ### Gate 0.4 — fake upstream service
+
+Status: **completed and verified 2026-09-14**.
 
 Implement deterministic fixtures for at least:
 
@@ -122,6 +129,8 @@ Acceptance:
 
 ### 3.1 Retrieval authorization
 
+Status: **completed and verified 2026-09-14**.
+
 Implement deterministic evidence-need codes and map each to the smallest
 allowed section set. Current enabled sections are:
 
@@ -137,6 +146,8 @@ entries, never invented by the LLM.
 
 ### 3.2 Structured LLM request
 
+Status: **completed and verified 2026-09-14**.
+
 The LLM receives only:
 
 - Compact validated handoff information needed for the routed case.
@@ -150,6 +161,8 @@ is rejected with a typed reason.
 
 ### 3.3 Block 3 acceptance
 
+Status: **completed against deterministic fake clients**.
+
 - Predictor-owned cases make zero adjudication calls.
 - Routed cases make no unauthorized calls.
 - Tool and model call budgets are enforced.
@@ -157,6 +170,8 @@ is rejected with a typed reason.
 - Deterministic replay under the same fixture is stable enough for tests.
 
 ## Block 4 sequence
+
+Status: **completed and verified 2026-09-14**.
 
 Create a pure arbiter whose inputs are the immutable handoff, optional validated
 LLM assessment, and frozen policy version.
@@ -180,6 +195,9 @@ Acceptance:
 - LLM verbal confidence is never averaged with model probability.
 
 ## Block 5 sequence
+
+Status: **implementation completed and verified against fake-service scenarios;
+candidate qualification gates remain external**.
 
 ### 5.1 Deterministic reasoning plan
 
@@ -234,3 +252,8 @@ service scenarios through the output validator, predictor-owned cases bypass
 the LLM, routed cases follow bounded retrieval/assessment paths, the arbiter
 always names one owner, and the two output payloads contain no probability or
 private fields.
+
+This milestone was met on **2026-09-14**. The verified suite has 56 passing
+tests and clean Ruff and strict-mypy checks. Real-service compatibility,
+released-case replay, official evaluation, and hardware qualification are the
+next shared candidate gates rather than unverified claims of this milestone.

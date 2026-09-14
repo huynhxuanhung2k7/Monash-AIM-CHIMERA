@@ -1,7 +1,7 @@
 # Project2 Task 1 Context
 
-Last updated: **2026-08-22**
-Status: **from-scratch workspace; Blocks 3–5 active**
+Last updated: **2026-09-14**
+Status: **Blocks 3–5 complete against fake upstream; real-service integration pending**
 Primary owner: **xuanhung_07**
 Upstream owner: **smoovie, Blocks 1–2**
 
@@ -144,19 +144,36 @@ uv sync --locked
 Do not commit `.venv/`. It contains machine-specific paths and is not a
 portable substitute for the committed lockfile.
 
-## Immediate implementation gate
+## Current implementation state
 
-The next session should not begin with the LLM. Environment bootstrap is done;
-it should now create and test:
+Completed on **2026-09-14**:
 
-1. Official decision/reasoning output models.
-2. `DecisionHandoffV1` and nested cross-team models.
-3. A fake `Task1DecisionService` with representative routing scenarios.
-4. Consumer contract tests and serializer deny-list tests proving that no
-   probability reaches terminal output.
+- Strict frozen handoff, retrieval, assessment, arbitration, reasoning, and
+  official-output contracts.
+- Contract-faithful fake upstream service covering predictor ownership, all
+  routed reasons, and typed hard failures.
+- Deterministic five-section retrieval planning, metadata-only evidence ledger,
+  local MCP adapter, bounded retrieval, and forbidden-evidence rejection.
+- Localhost-only structured Qwen client, versioned prompt, deterministic
+  assessment identity, one bounded repair attempt, and typed rejection paths.
+- Pure Stage 4 arbiter implementing every ownership/fallback truth-table row,
+  immutable decisions, typed uncertainty, and aggregate routing metrics.
+- Deterministic Stage 5 confidence, grounded factor/weight plan, safe prose,
+  validation gates, exact two-file atomic serialization with rollback, and an
+  official-output loader.
+- Contract, unit, integration, and reliability coverage: 56 tests passing;
+  Ruff clean; strict mypy clean; 88% branch-aware coverage.
 
-Only after this foundation passes should Block 3 retrieval and LLM assessment
-be implemented.
+See `docs/BLOCKS_3_5_IMPLEMENTATION.md` for the component map and verified
+commands.
+
+## Next cross-team gate
+
+Replace the fake service with the real Blocks 1–2 service and run the same
+consumer suite without changing Blocks 3–5. Paired promotion, 195-case replay,
+official evaluator replay, offline container qualification, and T4/A10G checks
+remain candidate-level gates because their required upstream artifacts, data,
+evaluator, and hardware are not present in this workspace.
 
 ## Required references
 

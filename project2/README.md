@@ -1,7 +1,8 @@
 # CHIMERA Task 1 — Project2
 
-Status: **new canonical implementation workspace**
+Status: **Blocks 3–5 implementation complete against the fake upstream service**
 Started: **2026-08-22**
+Implementation verified: **2026-09-14**
 Initial owner/workstream: **xuanhung_07 — Blocks 3–5**
 Shared scope: **complete Task 1 Blocks 1–5 repository**
 
@@ -11,9 +12,10 @@ Read:
 
 1. `PROJECT_CONTEXT.md`
 2. `docs/BLOCKS_3_5_START_PLAN.md`
-3. `docs/TASK1_BLOCKS_1_2_DECISION_ENGINE_HANDBOOK.md` for the upstream-owner
+3. `docs/BLOCKS_3_5_IMPLEMENTATION.md`
+4. `docs/TASK1_BLOCKS_1_2_DECISION_ENGINE_HANDBOOK.md` for the upstream-owner
    contract
-4. `docs/TASK1_BLOCKS_3_5_AGENT_SYSTEM_HANDBOOK.md` for the detailed downstream
+5. `docs/TASK1_BLOCKS_3_5_AGENT_SYSTEM_HANDBOOK.md` for the detailed downstream
    design reference
 
 ## Workspace rule
@@ -49,20 +51,23 @@ project2/
 └── submission/                    # added only after local gates pass
 ```
 
-The tree is a specification, not evidence that the listed files already exist.
+The Blocks 3–5 portions of this tree now exist and are covered by contract,
+unit, integration, and reliability tests.
 
 ## Current next action
 
-Environment bootstrap is complete. The next milestone is the contract
-foundation:
+The consumer foundation and Blocks 3–5 runtime are complete against the fake
+`Task1DecisionService`. The next cross-team milestone is:
 
-1. Locked output schemas.
-2. Blocks 1–2 handoff contract.
-3. Fake `Task1DecisionService` and scenario fixtures.
-4. Contract tests proving the fake can later be replaced without consumer
-   changes.
+1. Connect the real Blocks 1–2 service without changing consumer code.
+2. Run the shared contract and reliability suite against that implementation.
+3. Execute the paired promotion evaluation before enabling LLM ownership.
+4. Qualify the frozen candidate on the released cases, official evaluator, and
+   required offline hardware.
 
-Do not start prompt tuning or model calls before these gates pass.
+Those integration and qualification gates require upstream artifacts, released
+case data, evaluator assets, and target hardware that are not part of this
+commit.
 
 ## Reproducible environment
 
@@ -97,13 +102,17 @@ uv sync --locked
 uv run pytest
 ```
 
-Daily commands:
+Verification commands:
 
 ```bash
 uv run pytest
+uv run pytest --cov=chimera_task1 --cov-report=term-missing
 uv run ruff check .
 uv run mypy
 ```
+
+The 2026-09-14 implementation check passed 56 tests, Ruff, strict mypy, and
+88% branch-aware coverage.
 
 When an approved dependency changes:
 

@@ -1,0 +1,15 @@
+[reasoning]
+policy_version = "reasoning-policy-v1"
+max_factors = 4
+max_free_text_chars = 1800
+fallback_confidence = "uncertain"
+
+[grounding]
+always_visible = ["age", "psa"]
+radiology_report = ["cspca", "pirads", "vol", "psad", "dre"]
+family_history = ["fh"]
+forced_not_used = ["comorbidity", "bx"]
+
+[output]
+decision_filename = "prostate-biopsy-decision.json"
+reasoning_filename = "prostate-biopsy-decision-reasoning.json"
