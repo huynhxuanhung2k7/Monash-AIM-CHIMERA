@@ -1,0 +1,29 @@
+[llm]
+provider = "openai-compatible-localhost"
+base_url = "http://127.0.0.1:11434/v1"
+model = "Qwen/Qwen3-4B-Instruct-2507"
+revision = "cdbee75f17c01a7cc42f958dc650907174af0554"
+model_version = "Qwen3-4B-Instruct-2507:cdbee75f17c01a7cc42f958dc650907174af0554"
+temperature = 0.2
+top_p = 0.8
+max_tokens = 768
+context_length = 8192
+seed = 20260812
+timeout_seconds = 60.0
+
+[prompt]
+version = "stage3-adjudication-v1"
+max_attempts = 2
+
+[retrieval]
+policy_version = "retrieval-policy-v1"
+max_tools = 3
+timeout_seconds = 8.0
+max_content_chars = 6000
+enabled_sections = [
+  "previous_notes",
+  "radiology_report",
+  "psa_trend",
+  "laboratory_results",
+  "family_history",
+]
